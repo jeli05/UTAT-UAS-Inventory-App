@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.utatuasinventoryapp.MainActivity"
+        android:label="Main Fragment"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/action_mainFragment_to_subcategoryFragment"
+            app:destination="@id/subcategoryFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_mainFragment_to_addCategoryFragment"-->
+<!--            app:destination="@id/addCategoryFragment" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/subcategoryFragment"
+        android:name="com.example.utatuasinventoryapp.SubcategoryActivity"
+        android:label="Subcategory Fragment"
+        tools:layout="@layout/activity_subcategory">
+        <action
+            android:id="@+id/action_subcategoryFragment_to_itemsFragment"
+            app:destination="@id/itemsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="com.example.utatuasinventoryapp.ItemsActivity"
+        android:label="Items Fragment"
+        tools:layout="@layout/activity_items">
+        <action
+            android:id="@+id/action_itemsFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.example.utatuasinventoryapp.ItemDetailActivity"
+        android:label="Item Detail Fragment"
+        tools:layout="@layout/activity_item_detail" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/addCategoryFragment"-->
+<!--        android:name="com.example.uatapp.AddCategoryFragment"-->
+<!--        android:label="Add Category Fragment"-->
+<!--        tools:layout="@layout/fragment_add_category" />-->
+</navigation>

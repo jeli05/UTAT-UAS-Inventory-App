@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SubcategoryActivity">
+
+    <TextView
+        android:id="@+id/subcategory_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category: "
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/button_rc_controllers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RC controllers"
+        android:onClick="openItems"/>
+
+    <!-- Add buttons for other subcategories similarly -->
+</LinearLayout>

@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UTAT UAS Inventory"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/button_communication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Communication"
+        android:onClick="openSubcategory"/>
+
+    <!-- Add buttons for other categories similarly -->
+</LinearLayout>
