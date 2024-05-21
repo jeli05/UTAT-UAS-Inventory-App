@@ -27,6 +27,7 @@
         <activity android:name=".SubcategoryActivity" />
         <activity android:name=".ItemsActivity" />
         <activity android:name=".ItemDetailActivity" />
+        <activity android:name=".BrowseActivity"></activity>
 
     </application>
 

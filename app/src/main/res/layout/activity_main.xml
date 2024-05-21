@@ -1,4 +1,5 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_fragment"
     android:layout_width="match_parent"
@@ -10,17 +11,307 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="16dp"
         android:text="UTAT UAS Inventory"
         android:textSize="24sp"
-        android:layout_gravity="center"
-        android:padding="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="82dp" />
 
     <Button
-        android:id="@+id/button_communication"
-        android:layout_width="match_parent"
+        android:id="@+id/browse_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Communication"
-        android:onClick="openSubcategory"/>
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="150dp"
+        android:text="Browse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Add buttons for other categories similarly -->
-</LinearLayout>
+    <Button
+        android:id="@+id/addItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="150dp"
+        android:onClick="addClick"
+        android:text="Add item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <GridLayout-->
+    <!--        android:id="@+id/grid_layout"-->
+    <!--        android:layout_width="390dp"-->
+    <!--        android:layout_height="603dp"-->
+    <!--        android:layout_marginTop="176dp"-->
+    <!--        android:columnCount="2"-->
+    <!--        android:padding="10dp"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:layout_editor_absoluteX="10dp">-->
+
+    <!--        &lt;!&ndash;        <androidx.cardview.widget.CardView&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_row="1"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_column="0"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_margin="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginStart="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginEnd="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardBackgroundColor="@color/white"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardCornerRadius="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardElevation="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardMaxElevation="12dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardPreventCornerOverlap="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardUseCompatPadding="true">&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            &lt;!&ndash;&ndash;&gt;-->
+    <!--        &lt;!&ndash;                In the above cardview widget&ndash;&gt;-->
+    <!--        &lt;!&ndash;                cardelevation property will give elevation to your card view&ndash;&gt;-->
+    <!--        &lt;!&ndash;                card corner radius will provide radius to your card view&ndash;&gt;-->
+    <!--        &lt;!&ndash;                card background color will give background color to your card view&ndash;&gt;-->
+    <!--        &lt;!&ndash;                card max elevation will give the cardview maximum elevation&ndash;&gt;-->
+    <!--        &lt;!&ndash;                card prevent corner overlap will add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.&ndash;&gt;-->
+    <!--        &lt;!&ndash;                card use compact padding will add padding in API v21+ as well to have the same measurements with previous versions.&ndash;&gt;-->
+    <!--        &lt;!&ndash;                below are the two widgets imageview and text view we are displaying inside our card view.&ndash;&gt;-->
+    <!--        &lt;!&ndash;                &ndash;&gt;&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            <LinearLayout&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:weightSum="2">&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;                <TextView&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_gravity="bottom|center_horizontal"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_marginTop="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_marginBottom="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:text="Category 2"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:textSize="20sp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:textStyle="bold" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        </androidx.cardview.widget.CardView>&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        <androidx.cardview.widget.CardView&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_width="175dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_row="0"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_column="0"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_margin="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginStart="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginEnd="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardBackgroundColor="@color/white"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardCornerRadius="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardElevation="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardMaxElevation="12dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardPreventCornerOverlap="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardUseCompatPadding="true">&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            <TextView&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_gravity="bottom|center_horizontal"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginTop="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:layout_marginBottom="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:text="Category 2"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:textSize="20sp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                android:textStyle="bold" />&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </androidx.cardview.widget.CardView>&ndash;&gt;-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="175dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            android:onClick="onCardClick"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            app:cardMaxElevation="12dp"-->
+    <!--            app:cardPreventCornerOverlap="true"-->
+    <!--            app:cardUseCompatPadding="true">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom|center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:text="Avionics"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="175dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            app:cardMaxElevation="12dp"-->
+    <!--            app:cardPreventCornerOverlap="true"-->
+    <!--            app:cardUseCompatPadding="true">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom|center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:text="Raw materials"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="175dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            app:cardMaxElevation="12dp"-->
+    <!--            app:cardPreventCornerOverlap="true"-->
+    <!--            app:cardUseCompatPadding="true">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom|center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:text="Tools"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="175dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            app:cardMaxElevation="12dp"-->
+    <!--            app:cardPreventCornerOverlap="true"-->
+    <!--            app:cardUseCompatPadding="true">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom|center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:text="Wiring"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="175dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            app:cardMaxElevation="12dp"-->
+    <!--            app:cardPreventCornerOverlap="true"-->
+    <!--            app:cardUseCompatPadding="true">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom|center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:text="Propulsion"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="175dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp"-->
+    <!--            app:cardMaxElevation="12dp"-->
+    <!--            app:cardPreventCornerOverlap="true"-->
+    <!--            app:cardUseCompatPadding="true">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom|center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:text="Comms"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+
+    <!--        &lt;!&ndash;        <androidx.cardview.widget.CardView&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_width="175dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_margin="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginStart="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginEnd="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardBackgroundColor="@color/white"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardCornerRadius="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardElevation="10dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardMaxElevation="12dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardPreventCornerOverlap="true"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            app:cardUseCompatPadding="true">&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;                <TextView&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_gravity="bottom|center_horizontal"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_marginTop="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:layout_marginBottom="20dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:text="Category 2"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:textSize="20sp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    android:textStyle="bold" />&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;        </androidx.cardview.widget.CardView>&ndash;&gt;-->
+
+    <!--    </GridLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:weightSum="2">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="bottom|center_horizontal"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            android:layout_marginBottom="20dp"-->
+    <!--            android:text="Category 1"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:textStyle="bold" />-->
+    <!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
