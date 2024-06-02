@@ -45,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button addButton = findViewById(R.id.add_button);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddItemActivity.class);
+                startActivity(intent);
+            }
+        });
 //        GridLayout gridLayout = findViewById(R.id.grid_layout);
 //
 //        for (int i = 1; i <= 8; i++) {
