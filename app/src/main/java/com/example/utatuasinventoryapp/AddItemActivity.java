@@ -39,11 +39,19 @@ public class AddItemActivity extends AppCompatActivity {
         statusEditText = findViewById(R.id.edit_text_status);
         notesEditText = findViewById(R.id.edit_text_notes);
         addButton = findViewById(R.id.button_add);
+        Button backButton = findViewById(R.id.back_button);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addItemToDatabase();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
